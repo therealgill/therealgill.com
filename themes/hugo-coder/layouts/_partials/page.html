@@ -1,0 +1,13 @@
+<section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="{{ .Permalink | safeURL }}">
+          {{ .Title }}
+        </a>
+      </h1>
+    </header>
+    <p><strong>Published:</strong> {{ .Date.Format "January 2, 2006" }}</p>
+    {{ .Content }}
+  </article>
+</section>
