@@ -1,0 +1,68 @@
+# Workflow for building Hugo site to /docs folder for GitHub Pages
+name: Build Hugo site to docs folder
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches:
+      - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.121.0
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Build with Hugo to docs folder
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          # Remove existing docs folder if it exists
+          rm -rf docs
+          
+          # Build Hugo site to docs folder instead of public
+          hugo \
+            --gc \
+            --minify \
+            --destination docs
+            
+      - name: Add .nojekyll file
+        run: |
+          # Add .nojekyll to prevent GitHub from processing as Jekyll site
+          touch docs/.nojekyll
+          
+      - name: Commit and push docs folder
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # Add the docs folder to git
+          git add docs/
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-build: Update docs folder from Hugo build"
+            git push
+          fi
