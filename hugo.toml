@@ -26,7 +26,7 @@ unsafe = true
 author = "Matthew Gill"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 description = "Father | Husband | Problem Solver | Nerd"
-keywords = "blog,problem solver,scripter,powershell,slice of life,system administrator,developer,personal"
+keywords = "blog,problem solver,scripter,powershell,slice of life,system administrator,developer,personal,doing my best"
 info = [
   "Father | Husband | Problem Solver | Nerd"
 ]
