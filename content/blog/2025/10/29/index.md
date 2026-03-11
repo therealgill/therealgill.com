@@ -58,6 +58,8 @@ Additonally, many of the images that I had used in my blog posts were hosted by 
 
 And then there was Github Pages... Don't get me wrong, I get it now. But at the start it was just another *different* thing to throw on the pile of *different* things. Getting the actual site to build on commit was easy enough, but including the CNAME file and getting the domain to work was a bit of a pain. Turns out that when I was working on it Github just so happened to be experiencing some sort of outage that was affecting the domain verification process. I floundered for a bit before asking for help, and being told that the internet was just on-fire.
 
+(Updated for the actual release of the blog 3/10/2026) I took a break from trying to get the site converted and working on Github Pages for a few months, and am just now getting back to it. Up until now the site was still hosted on Wordpress via my Unraid server, this blog post was written but not hosted outside of a markdown file on the repo, and finally, FINALLY! I got this thing working. The DNS is routed and proxied via Cloudflare and that proved to be a super-annoying thing. DNS, right?! I had to strip out all of the apex and www DNS entries, tell Github Pages to validate the custom domain (several times), and eventually things just clicked.
+
 ## This version looks like it is missing some content
 
 Content creation joking aside, I didn't migrate everything over. All of the 2025 content is migrated over, and over time I will try to bring over the posts that still matter to me, but I doubt that all the content will make the cut. If I waited to release the new blog until everything had moved over, I don't know that it would ever see the light of day.
