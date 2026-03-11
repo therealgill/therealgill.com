@@ -4,7 +4,7 @@ title = '[TheRealGill]'
 theme = "hugo-coder"
 defaultContentLanguage = "en"
 enableEmoji = true
-relativeURLs = true
+#relativeURLs = true
 
 [pagination]
 pagerSize = 15
