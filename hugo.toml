@@ -30,7 +30,7 @@ keywords = "blog,problem solver,scripter,powershell,slice of life,system adminis
 info = [
   "Father | Husband | Problem Solver | Nerd"
 ]
-avatarURL = "images/profile.webp"
+avatarURL = "./images/profile.webp"
 #gravatar = "john.doe@example.com"
 dateFormat = "January 2, 2006"
 since = 2015
@@ -105,15 +105,15 @@ type = "application/rss+xml"
 
 [[menu.main]]
   name = "About Me"
-  url = "about/"
-  weight = 30
+  url = "./about/"
+  weight = 10
 
 [[menu.main]]
   name = "Blog"
-  url = "blog/"
-  weight = 30
+  url = "./blog/"
+  weight = 20
 
 [[menu.main]]
   name = "Projects"
-  url = "projects/"
+  url = "./projects/"
   weight = 30
