@@ -99,7 +99,7 @@ url = "https://www.linkedin.com/in/matthewgill1/"
 name = "RSS"
 icon = "fa-solid fa-rss fa-2x"
 weight = 6
-url = "https://myhugosite.com/index.xml"
+url = "https://therealgill.com/index.xml"
 rel = "alternate"
 type = "application/rss+xml"
 
